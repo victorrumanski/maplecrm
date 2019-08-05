@@ -1,2 +1,2 @@
 # maplecrm
-Angular Project
+Angular Project with Spring Boot Backend
