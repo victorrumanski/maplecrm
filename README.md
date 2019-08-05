@@ -1,2 +1,3 @@
 # maplecrm
-Angular Project with Spring Boot Backend
+
+Angular 8 SPA with Spring Boot Backend
