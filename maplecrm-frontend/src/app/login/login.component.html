@@ -1,38 +1,45 @@
 <div class="login-container">
   <div class="login">
-    <h1 class="login__logo">Mapple CRM</h1>
-    <span class="login__heading">Sign into Your Account</span>
+    <img src="/assets/images/logo.png" alt="" width="30%">
+    <h1 class="login__logo">Maple CRM</h1>
+    <h3 class="mgb-med">Sign into Your Account</h3>
 
-    <form class="login-form">
-      <div class="form-group">
-        <label for="email" class="form-label">Email Address</label>
-        <input type="text" class="form-control" name="email" />
+    <form class="login__form mgb-med">
+      <label for="email" class="login__label">Email Address</label>
+      <div class="input-group mgb-med">
+        <span class="input-group__icon fontawesome-envelope"></span>
+        <input type="text" class="input-group__input" id="email" value="victor.rumanski@gmail.com"/>
       </div>
-      <div class="form-group">
-        <label for="password" class="form-label">Password</label>
-        <input type="text" class="form-control" name="password" />
+      <label for="password" class="login__label">Password</label>
+      <div class="input-group mgb-med">
+        <span class="input-group__icon fontawesome-key"></span>
+        <input type="password" class="input-group__input" id="password" value="victor"/>
       </div>
-      <label for="remember" class="form-label">
-        <input type="checkbox" class="form-control" name="remember" />
-      </label>
-      <a routerLink="/forgot">Forgot Password</a>
-      <input type="submit" value="Login" class="btn-primary btn-block" />
+      <div class="login__form--options mgb-small">
+        <label for="remember" class="form-label">
+          <input type="checkbox" class="form-control" id="remember" /> Remember me
+        </label>
+        <a routerLink="/forgot">Forgot Password</a>
+      </div>
+      <button class="btn btn-primary btn-block">Log In</button>
     </form>
-
-    <div class="orloginwith">Or Login With</div>
-
-    <div class="social-buttons">
-      <a href="#" class="btn facebook">Facebook</a>
-      <a href="#" class="btn twitter">Twitter</a>
-      <a href="#" class="btn google">Google</a>
+    <div class="orloginwith mgb-small">
+      <span>
+        Or login with
+      </span>
     </div>
-
-    <a routerLink="/register" class="bold">Don't have an account? Register Here</a>
+    <div class="login__social-buttons mgb-big">
+      <button class="btn facebook">Facebook</button>
+      <button class="btn twitter">Twitter</button>
+      <button class="btn google">Google</button>
+    </div>
+    
+    Don't have an account? 
+    <a routerLink="/register" class="bold">Register Here</a>
   </div>
   <div class="welcome">
-    <h1 class="welcome-heading">Welcome to Maple CRM</h1>
-
-    <span class="welcome-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+    <h1 class="welcome__heading">Welcome to Maple CRM</h1>
+    <span class="welcome__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
       since the 1500s, when an unknown printer took a galley of type and
       scrambled it to make a type</span>
   </div>

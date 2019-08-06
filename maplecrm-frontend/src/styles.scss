@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+// FONT VARIABLES
+$font-primary: "Roboto", sans-serif;
+$font-display: "Rubik", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400, 700");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300, 400, 500, 700");
+@import url("https://weloveiconfonts.com/api/?family=fontawesome");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  color: #111;
+  line-height: 1.6;
+  background-color: #f3f6f8;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font-display;
+}
+
+.mgb-small { margin-bottom: 1rem; }
+.mgb-med { margin-bottom: 2rem; }
+.mgb-big { margin-bottom: 3rem; }
+.mgt-small { margin-top: 1rem; }
+.mgt-med { margin-top: 2rem; }
+.mgt-big { margin-top: 3rem; }
+
+.btn {
+  font-weight: bolder;
+  padding: .7rem 1.4rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background-color: #50a1fc;
+  color: #fff;
+}
+
+.btn-block {
+    width: 100%;
+}
