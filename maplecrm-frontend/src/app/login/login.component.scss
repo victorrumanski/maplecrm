@@ -1,0 +1,13 @@
+.login-container {
+  display: flex;
+  height: 100vh;;
+}
+
+.login {
+  flex-basis: 40vw;
+}
+
+.welcome {
+  flex-basis: 60vw;
+  background-color: #50a1fc;
+}
