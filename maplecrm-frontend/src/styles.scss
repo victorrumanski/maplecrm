@@ -56,7 +56,7 @@ h1,h2,h3,h4,h5,h6{
 
 .btn {
   font-weight: bolder;
-  padding: .7rem 1.4rem;
+  padding: .7rem 1.5rem;
   border: none;
   font-size: 1.2rem;
   border-radius: 2px;
@@ -69,4 +69,50 @@ h1,h2,h3,h4,h5,h6{
 
 .btn-block {
     width: 100%;
+}
+
+.fbox-align-center {
+  align-self: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.twitter {
+  background-color: #00aced;
+  color: #fff;
+}
+.google {
+  background-color: #dd4b39;
+  color: #fff;
+}
+
+
+.input-group {
+  display: flex;
+  font-size: 1rem;
+
+  &__icon {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 10%;
+    background-color: #ddd;
+  }
+
+  &__input {
+    height: 45px;
+    line-height: 45px;
+    width: 90%;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+  }
 }

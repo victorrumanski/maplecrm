@@ -1,0 +1,23 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__form {
+    &--options {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__social-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    color: red;
+  }
+}

@@ -1,0 +1,40 @@
+<h3 class="text-center mgb-med">Sign into Your Account</h3>
+<div class="login">
+  <form class="login__form mgb-med">
+    <label for="email" class="login__label">Email Address</label>
+    <div class="input-group mgb-small">
+      <span class="input-group__icon fontawesome-envelope"></span>
+      <input
+        type="text"
+        class="input-group__input"
+        id="email"
+        value="victor.rumanski@gmail.com"
+      />
+    </div>
+    <label for="password" class="login__label">Password</label>
+    <div class="input-group mgb-small">
+      <span class="input-group__icon fontawesome-key"></span>
+      <input
+        type="password"
+        class="input-group__input"
+        id="password"
+        value="victor"
+      />
+    </div>
+    <div class="login__form--options mgb-small">
+      <label for="remember" class="form-label">
+        <input type="checkbox" class="form-control" id="remember" /> Remember me
+      </label>
+      <a routerLink="/auth/forgot">Forgot Password</a>
+    </div>
+    <button class="btn btn-primary btn-block">Log In</button>
+  </form>
+  <div class="fbox-align-center orloginwith mgb-small">Or login with</div>
+  <div class="login__social-buttons mgb-small">
+    <button class="btn facebook">Facebook</button>
+    <button class="btn twitter">Twitter</button>
+    <button class="btn google">Google</button>
+  </div>
+  
+  <a routerLink="/auth/register" class="fbox-align-center bold">Don't have an account? Register Here</a>
+</div>
