@@ -4,37 +4,27 @@
     <label for="name" class="login__label">Full Name</label>
     <div class="input-group mgb-small">
       <span class="input-group__icon fontawesome-user"></span>
-      <input
-        type="text"
+      <input type="text" id="name" 
         class="input-group__input"
-        id="name"
-        value="Victor Douglas Rumanski"
-      />
+        value="Victor Douglas Rumanski" />
     </div>
     <label for="email" class="login__label">Email Address</label>
     <div class="input-group mgb-small">
       <span class="input-group__icon fontawesome-envelope"></span>
-      <input
-        type="text"
+      <input type="text" id="email"
         class="input-group__input"
-        id="email"
-        value="victor.rumanski@gmail.com"
-      />
+        value="victor.rumanski@gmail.com" />
     </div>
     <label for="password" class="login__label">Password</label>
     <div class="input-group mgb-small">
       <span class="input-group__icon fontawesome-key"></span>
-      <input
-        type="password"
-        class="input-group__input"
-        id="password"
-        value="victor"
-      />
+      <input type="password" id="password"
+        class="input-group__input" />
     </div>
     <button class="btn btn-primary btn-block">Register</button>
   </form>
   <div class="register__links">
-      <a routerLink="/auth/login">Go to Login page</a>
-      <a routerLink="/auth/forgot">Recover Password</a>
-    </div>
+    <a routerLink="/auth/login">Go to Login page</a>
+    <a routerLink="/auth/forgot">Recover Password</a>
+  </div>
 </div>
