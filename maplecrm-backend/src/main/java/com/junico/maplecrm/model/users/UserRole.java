@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 public class UserRole {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)

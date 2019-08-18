@@ -1,27 +1,32 @@
 package com.junico.maplecrm.payload;
 
+import com.junico.maplecrm.model.users.User;
+
 public class AuthResponse {
 
-	private String accessToken;
-	private String tokenType = "Bearer";
+	private String token;
+	private User user;
 
-	public AuthResponse(String accessToken) {
-		this.accessToken = accessToken;
+	public AuthResponse(String token, User user) {
+		super();
+		this.token = token;
+		this.user = user;
 	}
 
-	public String getAccessToken() {
-		return accessToken;
+	public String getToken() {
+		return token;
 	}
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
+	public void setToken(String token) {
+		this.token = token;
 	}
 
-	public String getTokenType() {
-		return tokenType;
+	public User getUser() {
+		return user;
 	}
 
-	public void setTokenType(String tokenType) {
-		this.tokenType = tokenType;
+	public void setUser(User user) {
+		this.user = user;
 	}
+
 }

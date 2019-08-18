@@ -13,7 +13,7 @@ public class MapleCRMApplication {
 
 	public static void main(String[] args) {
 		
-//		String encode = new BCryptPasswordEncoder().encode("kkk123");
+//		String encode = new BCryptPasswordEncoder().encode("saq123");
 //		System.out.println(encode);
 		
 		SpringApplication.run(MapleCRMApplication.class, args);

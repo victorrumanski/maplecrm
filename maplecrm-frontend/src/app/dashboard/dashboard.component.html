@@ -1,4 +1,10 @@
+<a *ngIf="!user" routerLink="/auth/login">Login Page</a>
+<a *ngIf="user" (click)="logout()">Logout</a>
 
-
-<a routerLink="/auth/login">Login</a>
+<br />
 <h1>Beautiful Dashboard with charts!</h1>
+<div *ngIf="user">
+  Logged In with {{user.email}}
+  <img src="{{user.imageUrl}}" width="200px" style="border-radius: 50%">
+</div>
+

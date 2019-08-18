@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_BASE_URL: 'http://localhost:8080',
+  OAUTH2_REDIRECT_URI: 'http://localhost:4200/auth/oauth2/redirect',
+  ACCESS_TOKEN: 'accessToken'
 };
 
 /*

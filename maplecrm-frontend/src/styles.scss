@@ -57,7 +57,7 @@ h1,h2,h3,h4,h5,h6{
 .btn {
   font-weight: bolder;
   padding: .7rem 1.5rem;
-  border: none;
+  border: 1px solid #ddd;
   font-size: 1.2rem;
   border-radius: 2px;
 }
@@ -92,7 +92,9 @@ h1,h2,h3,h4,h5,h6{
   background-color: #dd4b39;
   color: #fff;
 }
-
+.social-login-link{
+  
+}
 
 .input-group {
   display: flex;

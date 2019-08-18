@@ -5,12 +5,16 @@ import { AuthRoutingModule } from './auth.routing.module';
 import { ForgotComponent } from './forgot/forgot.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OAuth2RedirectComponent } from './oauth2/oauth2-redirect.component';
 
 
 @NgModule({
-  declarations: [AuthComponent, RegisterComponent, ForgotComponent, LoginComponent],
+  declarations: [AuthComponent, RegisterComponent, ForgotComponent, LoginComponent, OAuth2RedirectComponent],
   imports: [
-    CommonModule, AuthRoutingModule
+    CommonModule, AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }

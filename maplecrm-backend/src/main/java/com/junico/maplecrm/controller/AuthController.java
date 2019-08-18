@@ -26,6 +26,7 @@ import com.junico.maplecrm.payload.LoginRequest;
 import com.junico.maplecrm.payload.SignUpRequest;
 import com.junico.maplecrm.repository.UserRepository;
 import com.junico.maplecrm.security.TokenProvider;
+import com.junico.maplecrm.security.UserPrincipal;
 import com.junico.maplecrm.service.UserService;
 
 @RestController
@@ -58,7 +59,10 @@ public class AuthController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		String token = tokenProvider.createToken(authentication);
-		return ResponseEntity.ok(new AuthResponse(token));
+		UserPrincipal principal = (UserPrincipal) authentication.getPrincipal();
+		User user = userRepository.findById(principal.getId()).get();
+		AuthResponse res = new AuthResponse(token, user);
+		return ResponseEntity.ok(res);
 	}
 
 	@PostMapping("/signup")

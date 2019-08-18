@@ -1,6 +1,8 @@
 package com.junico.maplecrm.model.users;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -23,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(nullable = false)
@@ -36,6 +39,7 @@ public class User {
 	private String imageUrl;
 
 	@Column(nullable = false)
+	@JsonIgnore
 	private Boolean emailVerified = false;
 
 	@JsonIgnore
@@ -43,12 +47,18 @@ public class User {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
+	@JsonIgnore
 	private AuthProvider provider;
 
+	@JsonIgnore
 	private String providerId;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
 	public List<UserRole> userRoles;
+
+	@Transient
+	private List<String> roles;
 
 	public Long getId() {
 		return id;
@@ -120,5 +130,14 @@ public class User {
 
 	public void setUserRoles(List<UserRole> userRoles) {
 		this.userRoles = userRoles;
+	}
+
+	public List<String> getRoles() {
+		if (userRoles == null)
+			return Collections.emptyList();
+
+		return userRoles.stream().map(ur -> {
+			return ur.getRole().getName();
+		}).collect(Collectors.toList());
 	}
 }

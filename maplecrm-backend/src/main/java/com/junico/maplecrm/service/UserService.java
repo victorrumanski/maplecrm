@@ -28,10 +28,13 @@ public class UserService {
 
 	public User create(User user) {
 		Optional<Role> defaultRole = roleRepository.findById(Role.DEFAULT);
+		user = userRepository.save(user);
 		UserRole userRole = new UserRole();
 		userRole.setRole(defaultRole.get());
+		userRole.setUser(user);
+		userRole = userRoleRepository.save(userRole);
 		user.setUserRoles(Arrays.asList(userRole));
-		return userRepository.save(user);
+		return user;
 	}
 
 	@PreAuthorize("hasRole('" + Role.ADMIN + "')")
