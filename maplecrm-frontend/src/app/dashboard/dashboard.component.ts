@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   user: User;
-
+  
   constructor(private authenticationService: AuthenticationService, private router: Router) {
     this.user = this.authenticationService.currentUserValue;
     this.authenticationService.currentUser.subscribe(user => {

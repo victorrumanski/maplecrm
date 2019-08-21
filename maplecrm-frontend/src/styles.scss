@@ -27,11 +27,6 @@ $bp-small: 37.5em; // 600px;
   box-sizing: inherit;
 }
 
-/* fontawesome */
-[class*="fontawesome-"]:before {
-    font-family: 'FontAwesome', sans-serif;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -45,6 +40,10 @@ body {
 
 h1,h2,h3,h4,h5,h6{
   font-family: $font-display;
+}
+
+h5{
+  font-size: 15px;
 }
 
 .mgb-small { margin-bottom: 1rem; }
@@ -79,6 +78,10 @@ h1,h2,h3,h4,h5,h6{
   text-align: center;
 }
 
+.text-muted {
+  color:#aaa;
+}
+
 .facebook {
   background-color: #3b5998;
   color: #fff;
@@ -91,9 +94,6 @@ h1,h2,h3,h4,h5,h6{
 .google {
   background-color: #dd4b39;
   color: #fff;
-}
-.social-login-link{
-  
 }
 
 .input-group {
@@ -117,4 +117,22 @@ h1,h2,h3,h4,h5,h6{
     font-size: 1.2rem;
     border: 1px solid #ddd;
   }
+}
+
+.alert {
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin: 10px 0px;
+}
+.alert-error {
+  background-color: #f37f70;
+  border: 1px solid #974136;
+}
+
+.invalid-feedback{
+  color: #ec4029
+}
+
+.is-invalid {
+  border: 1px solid #ec4029
 }

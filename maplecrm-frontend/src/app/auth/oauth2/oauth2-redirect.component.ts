@@ -26,7 +26,6 @@ export class OAuth2RedirectComponent implements OnInit {
       } else {
         //if there is no error, then oauth went ok
         this.authenticationService.processOAuth2LoginResult(token).subscribe(user => {
-          console.log('processOAuth2LoginResult ok', user)
           this.router.navigate(['/'])
         }, error => {
           console.log('error on processOAuth2LoginResult', error)

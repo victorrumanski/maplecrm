@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '@app/_services';
 import { first } from 'rxjs/operators';
-import { GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL, GITHUB_AUTH_URL } from '@app/_constants';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +16,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error: '';
-  googleAuthUrl = GOOGLE_AUTH_URL;
-  facebookAuthUrl = FACEBOOK_AUTH_URL;
-  githubAuthUrl = GITHUB_AUTH_URL;
+  OAuthURLS: {};
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,6 +28,7 @@ export class LoginComponent implements OnInit {
     if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
     }
+    this.OAuthURLS = authenticationService.OAuthURLS;
   }
 
   ngOnInit() {
@@ -46,6 +44,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.error = undefined;
     if (this.loginForm.invalid)
       return;
 
@@ -56,8 +55,8 @@ export class LoginComponent implements OnInit {
         user => {
           this.router.navigate([this.returnUrl]);
         },
-        res => {
-          this.error = res.error.message;
+        error => {
+          this.error = error;
           this.loading = false;
         }
       )

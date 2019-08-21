@@ -1,2 +1,11 @@
-<h1>Login OAuth2 finished!</h1>
-<a routerLink="/">Please click here to see the dashboard</a>
+<div *ngIf="error">
+  <h2>An error ocurred while authenticating</h2>
+  <div class="alert alert-error">
+    <p>{{error}}</p>
+  </div>
+  <a routerLink="/auth/login">Please click here to Login</a>
+</div>
+
+<div *ngIf="!error">
+    <h2>Login successful!</h2>
+</div>

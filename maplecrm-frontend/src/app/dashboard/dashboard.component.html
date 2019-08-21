@@ -1,10 +1,44 @@
-<a *ngIf="!user" routerLink="/auth/login">Login Page</a>
-<a *ngIf="user" (click)="logout()">Logout</a>
-
-<br />
-<h1>Beautiful Dashboard with charts!</h1>
-<div *ngIf="user">
-  Logged In with {{user.email}}
-  <img src="{{user.imageUrl}}" width="200px" style="border-radius: 50%">
+<div class="side-menu">
+  <div class="brand mgt-small mgb-med">
+    <img src="/assets/images/logo.png" height="30px" alt="Logo"> 
+    <h2 class="brand__title">Maple CRM</h2>
+  </div>
+  <div class="profile mgb-med">
+      <img src="{{user.imageUrl}}" height="50px" alt="avatar" (click)="logout()" class="profile__pic"> 
+      <h5 class="profile__name">{{user.name}}</h5>
+      <span class="text-muted">{{user.roles}}</span>
+  </div>
+  <ul class="menu">
+    <li class="menu__item">
+      <a href="#" class="menu__item--link">
+          <i-feather name="airplay"></i-feather>
+          <span class="menu__item--link-text">Dashboard</span>
+        </a>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__item--link">
+          <i-feather name="search"></i-feather>
+          <span class="menu__item--link-text">Customers</span>
+        </a>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__item--link">
+          <i-feather name="users"></i-feather>
+          <span class="menu__item--link-text">Admin Area</span>
+        </a>
+    </li>
+    <!-- <li class="menu__item">
+      <a href="#" class="menu__item--link">
+          <i-feather name="terminal"></i-feather>
+          <span class="menu__item--link-text">View My Resume</span>
+        </a>
+    </li> -->
+  </ul>
 </div>
+
+<div class="content-page">
+    Content
+</div>
+
+<div class="footer">Footer</div>
 

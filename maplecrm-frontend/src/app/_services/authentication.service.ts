@@ -4,13 +4,19 @@ import { User } from '@app/_models';
 import { environment } from '@environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-//import { UserService } from './user.service';
+import { GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL, GITHUB_AUTH_URL } from '@app/_constants';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
   private ITEM_KEY = 'currentUser';
   private rootPath = `${environment.API_BASE_URL}/auth`;
+  public OAuthURLS = {
+    google: GOOGLE_AUTH_URL,
+    facebook: FACEBOOK_AUTH_URL,
+    github: GITHUB_AUTH_URL,
+  }
+
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
@@ -41,9 +47,14 @@ export class AuthenticationService {
       }));
   }
 
-  processOAuth2LoginResult(token: string) {
-    console.log('oauth2 token ', token);
+  signup(name: string, email: string, password: string) {
+    return this.http.post<{ success: boolean, message: string }>(`${this.rootPath}/signup`, { name, email, password })
+  }
 
+
+  //this is when oauth went ok and a token was generated
+  processOAuth2LoginResult(token: string) {
+    //beacuse we still do not have the localstorage user key, I need to manually set the auth header
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<User>(`${environment.API_BASE_URL}/user/me`, { headers })
       .pipe(tap(user => {

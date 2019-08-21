@@ -4,5 +4,6 @@ export class User {
     password: string;
     name: string;
     roles: string[];
+    imageUrl?: string;
     token?: string;
 }

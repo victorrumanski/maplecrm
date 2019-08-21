@@ -6,20 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { JwtHttpInterceptor } from './_services/jwt.interceptor';
+import { NotFoundComponent } from './_components/not-found.component';
 import { ErrorInterceptor } from './_services/error.interceptor';
+import { JwtHttpInterceptor } from './_services/jwt.interceptor';
+import { IconsModule } from './_icons/icons.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    AuthModule
+    IconsModule,
+    AuthModule,
+    AppRoutingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtHttpInterceptor, multi: true },
