@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumbs {
+  font-size: 13px;
+}
+
+.right-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__item {
+    list-style: none;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.global-search {
+  &__input {  
+    outline: none;
+    border: none;
+    background-color: #e3eaef;
+    padding: 10px 20px;
+    border-radius: 15px;
+  }
+}
+
+.header-profile {
+  &__pic{
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  &__name{
+    font-size: 14px;
+  }
+}

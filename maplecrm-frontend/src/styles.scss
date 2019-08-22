@@ -81,6 +81,9 @@ h5{
 .text-muted {
   color:#aaa;
 }
+.text-semi-muted {
+  color:#888;
+}
 
 .facebook {
   background-color: #3b5998;
@@ -135,4 +138,14 @@ h5{
 
 .is-invalid {
   border: 1px solid #ec4029
+}
+
+.wrap {
+  display: flex;
+}
+
+.content-page {
+  width: 100%;
+  margin: 30px 30px 5px 30px;
+  border: 1px solid inherit;
 }

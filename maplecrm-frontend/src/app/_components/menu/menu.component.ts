@@ -1,4 +1,5 @@
-import { OnInit, Component } from '@angular/core';
+import { OnInit, Component, Input } from '@angular/core';
+import { User } from '@app/_models';
 
 @Component({
   selector: 'app-menu',
@@ -6,7 +7,11 @@ import { OnInit, Component } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
+  @Input() public user: User;
+
   ngOnInit() {
 
   }
+
 }

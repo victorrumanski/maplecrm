@@ -1,0 +1,28 @@
+<div class="header mgb-small">
+  <div class="page-title">
+    <h2>{{title}}</h2>
+    <div class="breadcrumbs">
+      <span class="text-muted">
+        MapleCRM > Dashboard > 
+      </span>
+      <span class="text-semi-muted">Home</span>
+    </div>
+  </div>
+  <ul class="right-toolbar">
+    <li class="right-toolbar__item">
+      <div class="global-search">
+        <input class="global-search__input" type="text" placeholder="Search...">
+      </div>
+    </li>
+    <li class="right-toolbar__item">
+        <i-feather name="bell" class="text-semi-muted"></i-feather>
+    </li>
+    <li class="right-toolbar__item">
+        <i-feather name="message-square"  class="text-semi-muted"></i-feather>
+    </li>
+    <li class="right-toolbar__item">
+        <img src="{{user.imageUrl}}" alt="profile" class="header-profile__pic">
+        <span class="text-semi-muted header-profile__name">{{user.name}}</span>
+    </li>
+  </ul>
+</div>

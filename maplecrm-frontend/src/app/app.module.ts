@@ -10,12 +10,16 @@ import { NotFoundComponent } from './_components/not-found.component';
 import { ErrorInterceptor } from './_services/error.interceptor';
 import { JwtHttpInterceptor } from './_services/jwt.interceptor';
 import { IconsModule } from './_icons/icons.module';
+import { MenuComponent } from './_components/menu/menu.component';
+import { HeaderComponent } from './_components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MenuComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
