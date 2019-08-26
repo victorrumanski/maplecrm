@@ -1,0 +1,90 @@
+<div class="account-overview panel white">
+  <h3>ACCOUNT OVERVIEW</h3>
+  <br />
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat__info">
+        <span class="stat__title text-semi-muted">Daily Sales</span>
+        <h2 class="stat__number">$ 35,175</h2>
+      </div>
+      <div class="stat__chart">
+        <canvas
+          baseChart
+          height="70px"
+          width="100%"
+          [legend]="false"
+          [data]="[55, 45]"
+          [labels]="doughnutChartLabels"
+          [options]="options"
+          [colors]="colors"
+          [chartType]="doughnutChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat__info">
+        <span class="stat__title text-semi-muted">Daily Sales</span>
+        <h2 class="stat__number">$ 12,331</h2>
+      </div>
+      <div class="stat__chart">
+        <canvas
+          baseChart
+          height="70px"
+          width="100%"
+          [legend]="false"
+          [data]="[40, 60]"
+          [labels]="doughnutChartLabels"
+          [options]="options"
+          [colors]="colors"
+          [chartType]="doughnutChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat__info">
+        <span class="stat__title text-semi-muted">Daily Sales</span>
+        <h2 class="stat__number">$ 1,659</h2>
+      </div>
+      <div class="stat__chart">
+        <canvas
+          baseChart
+          height="70px"
+          width="100%"
+          [legend]="false"
+          [data]="[55, 45]"
+          [labels]="doughnutChartLabels"
+          [options]="options"
+          [colors]="colors"
+          [chartType]="doughnutChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat__info">
+        <span class="stat__title text-semi-muted">Daily Sales</span>
+        <h2 class="stat__number">$ 500</h2>
+      </div>
+      <div class="stat__chart">
+        <canvas
+          baseChart
+          height="70px"
+          width="100%"
+          [legend]="false"
+          [data]="[13, 87]"
+          [labels]="doughnutChartLabels"
+          [options]="options"
+          [colors]="colors"
+          [chartType]="doughnutChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

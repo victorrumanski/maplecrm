@@ -84,6 +84,9 @@ h5{
 .text-semi-muted {
   color:#888;
 }
+.text-white{
+  color: white;
+}
 
 .facebook {
   background-color: #3b5998;
@@ -148,4 +151,36 @@ h5{
   width: 100%;
   margin: 30px 30px 5px 30px;
   border: 1px solid inherit;
+}
+
+.green {
+  background-color: rgb(73, 158, 73);
+}
+.violet {
+  background-color: rgb(131, 73, 158);
+}
+.indigo {
+  background-color: rgb(73, 99, 158);
+}
+
+.panel {
+  background-color: white;
+  padding: 15px 15px;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+  transition: all .3s;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.icon-small > svg {
+  height: 20px;
+  width: 20px;
 }

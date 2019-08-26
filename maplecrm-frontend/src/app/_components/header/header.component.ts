@@ -9,7 +9,11 @@ import { User } from '@app/_models';
 export class HeaderComponent implements OnInit {
 
   @Input() public user: User;
-  @Input() public title: string;
+  @Input() public thetitle: string;
+
+  private showAlerts: boolean = false;
+  private showMessages: boolean = false;
+  private showProfile: boolean = false;
 
   ngOnInit() {
 
