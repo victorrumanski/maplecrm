@@ -48,7 +48,9 @@ users crud page /users
 ----
 
 This project uses oauth2 for social login
+
 to have a overview of the authentication flow , look at these diagrams
+
 https://i.stack.imgur.com/PBlvj.png
 https://developers.google.com/+/images/server_side_code_flow.png
 
