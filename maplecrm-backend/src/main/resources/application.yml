@@ -13,7 +13,7 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: none
-            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+            #naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
         properties:
             hibernate:
                 temp:

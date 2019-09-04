@@ -1,0 +1,28 @@
+.stats {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-evenly;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    flex-shrink: 0;
+  }
+  &__chart {
+    flxex-grow: 0;
+  }
+  &__title{
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  &__number{
+    font-size: 26px;
+    text-align: right;
+  }
+}

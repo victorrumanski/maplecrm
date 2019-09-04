@@ -1,0 +1,98 @@
+<div class="header mgb-small">
+  <div class="page-title">
+    <h3>{{thetitle}}</h3>
+    <div class="breadcrumbs">
+      <span class="text-muted">
+        MapleCRM > Dashboard > 
+      </span>
+      <span class="text-semi-muted">Home</span>
+    </div>
+  </div>
+  <ul class="right-toolbar">
+    <li class="right-toolbar__item">
+      <div class="global-search">
+        <input class="global-search__input" type="text" placeholder="Search...">
+        <button title="Click to Search..." style="border: none;">
+            <i-feather name="search" class="global-search__input--icon"></i-feather>
+        </button>
+      </div>
+    </li>
+    <li class="right-toolbar__item" (click)="showAlerts=!showAlerts;showProfile=false">
+        <i-feather name="bell" class="text-semi-muted"></i-feather>
+        <span class="badge green">5</span>
+
+        <div class="dropdown-menu" [ngClass]="{show: showAlerts, hide: !showAlerts}">
+          <div class="dropdown-menu__header">
+            <h4>Alerts</h4>
+            <span class="clear-all-btn">Clear all</span>
+          </div>
+          <ul class="dropdown-menu__body">
+            <li class="dropdown-menu__item">
+              <a href="#" class="item-link">
+                <i-feather name="heart" class="item-link__icon text-white green"></i-feather>
+                <div class="item-link__text">
+                  <span >You did not closed any deals this week!</span>
+                  <div class="item-link__date text-muted">1 min ago</div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-menu__item">
+              <a href="#" class="item-link">
+                <i-feather name="bar-chart" class="item-link__icon text-white violet"></i-feather>
+                <div class="item-link__text">
+                  <span >Do not forget to enter 300% quota goal</span>
+                  <div class="item-link__date text-muted">1 min ago</div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-menu__item">
+              <a href="#" class="item-link">
+                <i-feather name="user-plus" class="item-link__icon text-white indigo"></i-feather>
+                <div class="item-link__text">
+                  <span >You are 25% behind the avg volume/mo</span>
+                  <div class="item-link__date text-muted">1 min ago</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </li>
+    
+    <li class="right-toolbar__item" (click)="showProfile=!showProfile;showAlerts=false;">
+        <img src="{{user.imageUrl || '/assets/images/nouser.png'}}" alt="profile" class="header-profile__pic">
+        <span class="text-semi-muted header-profile__name">{{user.name}}</span>
+
+        <div class="dropdown-menu profile-menu" [ngClass]="{show: showProfile, hide: !showProfile}">
+          <div class="dropdown-menu__header">
+            <h4>Welcome!</h4>
+          </div>
+          <ul class="dropdown-menu__body">
+            <li class="dropdown-menu__item">
+              <a href="#" class="item-link">
+                <i-feather name="user" class="icon-small"></i-feather>
+                <div class="item-link__text">
+                  <span>Profile</span>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-menu__item">
+              <a href="#" class="item-link">
+                <i-feather name="settings" class="icon-small"></i-feather>
+                <div class="item-link__text">
+                  <span>Settings</span>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-menu__item">
+              <a class="item-link" (click)="logoutClicked()"> 
+                <i-feather name="log-out" class="icon-small"></i-feather>
+                <div class="item-link__text">
+                  <span>Log Out</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </li>
+  </ul>
+</div>

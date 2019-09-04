@@ -1,12 +1,9 @@
 package com.junico.maplecrm.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.junico.maplecrm.exception.ResourceNotFoundException;
@@ -17,10 +14,10 @@ import com.junico.maplecrm.payload.ApiResponse;
 import com.junico.maplecrm.repository.RoleRepository;
 import com.junico.maplecrm.repository.UserRepository;
 import com.junico.maplecrm.repository.UserRoleRepository;
-import com.junico.maplecrm.security.UserPrincipal;
 import com.junico.maplecrm.service.UserService;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -35,15 +32,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/user/me")
-	@PreAuthorize("hasRole('" + Role.DEFAULT + "')")
-	public User getCurrentUser(@AuthenticationPrincipal Authentication authentication) {
-		UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-		return userRepository.findById(userPrincipal.getId())
-				.orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
-	}
-
-	@PostMapping("/user/{userId}/roles")
+	@PostMapping("/{userId}/roles")
 	public ApiResponse addRole(Long userId, String roleId) {
 
 		User user = userRepository.findById(userId)
@@ -57,7 +46,7 @@ public class UserController {
 		return new ApiResponse(true, "Role Added Successfully!");
 	}
 
-	@DeleteMapping("/user/{userId}/roles")
+	@DeleteMapping("/{userId}/roles")
 	public ApiResponse removeRole(Long userRoleId) {
 
 		UserRole ur = userRoleRepository.findById(userRoleId)

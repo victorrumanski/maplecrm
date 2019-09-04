@@ -1,0 +1,48 @@
+.side-menu {
+  width: 240px;
+  min-height: 100vh;
+  padding: 15px 15px 15px 25px;
+  background-color: white;
+}
+
+.brand {
+  display: flex;
+  align-content: center;
+  &__title {
+    padding-left: 10px;
+    color: #555;
+  }
+}
+
+.profile {
+  &__pic {
+    border-radius: 50%;
+  }
+}
+
+.menu {
+  list-style: none;
+  &__item {
+    color: #555;
+    padding-bottom: 20px;
+    &--link {
+      display: flex;
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+      &:hover,
+      &:focus,
+      &-active:link,
+      &-active:visited,
+      &-active:focus,
+      &-active:hover {
+        color: rgb(228, 21, 2);
+      }
+      &-text {
+        margin-left: 15px;
+      }
+    }
+  }
+}

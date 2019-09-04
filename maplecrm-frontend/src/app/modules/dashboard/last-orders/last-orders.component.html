@@ -1,0 +1,37 @@
+<div class="panel white mgt-med mgb-med">
+  <h4>LAST ORDERS</h4>
+  <br />
+
+  <table class="table table-hover-striped">
+    <thead>
+      <tr>
+        <th style="width: 10%" class="align-center">#</th>
+        <th style="width: 10%" class="align-center">Status</th>
+        <th style="width: 40%">Customer</th>
+        <th style="width: 15%">Date</th>
+        <th style="width: 15%" class="align-right">Amount</th>
+        <th style="width: 10%" class="align-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index"> 
+        <td class="align-center">{{order.id}}</td>
+        <td class="align-center">
+          <span class="label green text-white">{{order.status}}</span>
+        </td>
+        <td>
+          {{order.customer.name}}
+          <div class="text-muted text-xs">
+            Member since {{order.customer.createdAt | date}}
+          </div>
+        </td>
+        <td>{{order.createdAt | date}}</td>
+        <td class="align-right">{{order.total | currency}}</td>
+        <td class="align-center">
+          Click
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

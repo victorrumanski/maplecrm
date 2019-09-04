@@ -1,0 +1,34 @@
+.table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+}
+
+.table > tbody {
+  font-size: 15px;
+}
+
+.table > thead > tr > th {
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+  border-bottom: 2px solid rgba(100, 100, 100, 0.2);
+  padding: 5px 0px;
+}
+
+.table > tbody > tr > td {
+  padding: 10px 2px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+
+.table-hover-striped tbody tr:hover {
+  background-color: rgba(150,150,150,.1);
+  cursor: pointer;
+}

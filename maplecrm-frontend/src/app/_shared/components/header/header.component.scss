@@ -1,0 +1,124 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumbs {
+  font-size: 13px;
+}
+
+.right-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__item {
+    list-style: none;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    borxder: 1px solid red;
+    cursor: pointer;
+  }
+}
+
+.global-search {
+  position: relative;
+  &__input {
+    outline: none;
+    border: none;
+    background-color: #e3eaef;
+    padding: 10px 20px;
+    border-radius: 15px;
+    &--icon {
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      color: #ccc;
+      cursor: pointer;
+      &:hover {
+        color: grey;
+      }
+    }
+  }
+}
+
+.header-profile {
+  &__pic {
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  &__name {
+    font-size: 14px;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  border-radius: 50%;
+  padding: 0px 5px;
+  font-size: 11px;
+  font-weight: 900;
+  color: white;
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 340px;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1);
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  &__body {
+    list-style: none;
+  }
+  &__item {
+    font-size: 14px;
+  }
+}
+
+.item-link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+  }
+  &__icon {
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    padding: 12px;
+  }
+  &__text {
+    padding-left: 10px;
+  }
+  &__date {
+    font-size: 10px;
+  }
+}
+
+.clear-all-btn {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.profile-menu{
+  width: 200px;
+}
