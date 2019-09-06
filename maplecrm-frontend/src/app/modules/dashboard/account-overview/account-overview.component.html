@@ -7,7 +7,7 @@
       <div class="stat__info">
         <span class="stat__title text-semi-muted">Monthly Sales</span>
         <h2 class="stat__number">
-{{account?.monthlySalesCurrent | currency : '$' : 'symbol' : '1.0' }}
+{{account.monthlySalesCurrent | currency : '$' : 'symbol' : '1.0' }}
         </h2>
       </div>
       <div class="stat__chart">
@@ -16,7 +16,7 @@
           height="70px"
           width="100%"
           [legend]="false"
-          [data]="[account?.monthlySalesCurrent, account?.monthlySalesCurrent*.5]"
+          [data]="[account.monthlySalesCurrent, account.monthlySalesCurrent*.5]"
           [labels]="doughnutChartLabels"
           [options]="options"
           [colors]="colors"
@@ -30,7 +30,7 @@
       <div class="stat__info">
         <span class="stat__title text-semi-muted">Quarterly Sales</span>
         <h2 class="stat__number">
-{{account?.quarterlySalesCurrent | currency : '$' : 'symbol' : '1.0' }}
+{{account.quarterlySalesCurrent | currency : '$' : 'symbol' : '1.0' }}
         </h2>
       </div>
       <div class="stat__chart">
@@ -39,7 +39,7 @@
           height="70px"
           width="100%"
           [legend]="false"
-          [data]="[account?.quarterlySalesCurrent, account?.quarterlySalesCurrent*.7]"
+          [data]="[account.quarterlySalesCurrent, account.quarterlySalesCurrent*.7]"
           [labels]="doughnutChartLabels"
           [options]="options"
           [colors]="colors"
@@ -52,7 +52,7 @@
     <div class="stat">
       <div class="stat__info">
         <span class="stat__title text-semi-muted">Monthly Customers</span>
-        <h2 class="stat__number">{{account?.monthlyCustomersCurrent}}</h2>
+        <h2 class="stat__number">{{account.monthlyCustomersCurrent}}</h2>
       </div>
       <div class="stat__chart">
         <canvas
@@ -60,7 +60,7 @@
           height="70px"
           width="100%"
           [legend]="false"
-          [data]="[account?.monthlyCustomersCurrent, account?.monthlyCustomersCurrent*3]"
+          [data]="[account.monthlyCustomersCurrent, account.monthlyCustomersCurrent*3]"
           [labels]="doughnutChartLabels"
           [options]="options"
        w   [colors]="colors"
@@ -73,7 +73,7 @@
     <div class="stat">
       <div class="stat__info">
         <span class="stat__title text-semi-muted">Quarterly Customers</span>
-        <h2 class="stat__number">{{account?.quarterlyCustomersCurrent}}</h2>
+        <h2 class="stat__number">{{account.quarterlyCustomersCurrent}}</h2>
       </div>
       <div class="stat__chart">
         <canvas
@@ -81,7 +81,7 @@
           height="70px"
           width="100%"
           [legend]="false"
-          [data]="[account?.quarterlyCustomersCurrent, account?.quarterlyCustomersCurrent*2]"
+          [data]="[account.quarterlyCustomersCurrent, account.quarterlyCustomersCurrent*2]"
           [labels]="doughnutChartLabels"
           [options]="options"
           [colors]="colors"

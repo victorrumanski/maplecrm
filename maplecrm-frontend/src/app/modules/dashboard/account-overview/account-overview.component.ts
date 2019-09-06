@@ -16,7 +16,6 @@ export class AccountOverviewComponent implements OnInit {
   public doughnutChartType: ChartType = 'doughnut';
 
   constructor() {
-
   }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
-<app-account-overview 
-  [account]="account$ | async"></app-account-overview>
-<app-last-orders
-  [orders]="orders$ | async"></app-last-orders>
+<ng-container *ngIf="account$ | async as account">
+  <app-account-overview [account]="account"></app-account-overview>
+</ng-container>
+<ng-container *ngIf="orders$ | async as orders">
+  <app-last-orders [orders]="orders"></app-last-orders>
+</ng-container>

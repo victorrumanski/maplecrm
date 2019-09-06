@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Order } from '@app/_core';
 
 @Component({
   selector: 'app-last-orders',
   templateUrl: './last-orders.component.html',
-  styleUrls: ['./last-orders.component.scss']
+  styleUrls: ['./last-orders.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LastOrdersComponent implements OnInit {
 

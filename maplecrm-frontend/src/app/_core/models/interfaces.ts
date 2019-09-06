@@ -8,3 +8,9 @@ export interface Account {
   monthlyCustomersCurrent,
   quarterlyCustomersCurrent: number;
 }
+
+export interface Customer {
+  name:string, 
+  birthdate:Date
+
+}
