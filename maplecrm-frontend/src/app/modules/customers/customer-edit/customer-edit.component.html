@@ -1,1 +1,66 @@
-<p>customer-edit works!</p>
+<form [formGroup]="angForm" (ngSubmit)="onSubmit()" novalidate class="form">
+  <div class="grid-2 mgb-small">
+    <div class="panel white col">
+      <h4>Main Info</h4>
+      <label for="name" class="mgt-small">Name <span class="text-red">*</span></label>
+      <input type="text" id="name" formControlName="name">
+      <div *ngIf="angForm.controls.name.invalid && (angForm.controls.name.dirty || angForm.controls.name.touched)">
+        <div *ngIf="angForm.controls.name.errors.required" class="input-error-msg">Name is required</div>
+      </div>
+
+      <label for="gender" class="mgt-small">Gender</label>
+      <select formControlName="gender">
+        <option value="">Select...</option>
+        <option *ngFor="let g of genders" [value]="g.code">{{g.name}}</option>
+      </select>
+
+      <label for="description" class="mgt-small">Description</label>
+      <textarea id="description" formControlName="description" rows="4"></textarea>
+
+      <label class="mgt-small">Birth Date</label>
+      <input class="date-input" matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="birthdate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+
+      <!--  <pre>Form value: {{angForm.value | json}}</pre>
+      <pre>Form status: {{angForm.status | json}}</pre>-->
+      <!-- <pre>Customer: {{customer | json }}</pre>  -->
+    </div>
+
+    <div class="panel white col">
+      <h4>Contact Info </h4>
+      <label for="state" class="mgt-small">
+        Province <span class="text-red">*</span></label>
+      <select formControlName="state">
+        <option value="">Select...</option>
+        <option *ngFor="let state of states" [value]="state.code"
+          >{{state.name}}</option>
+      </select>
+      <div *ngIf="angForm.controls.state.invalid && (angForm.controls.state.dirty || angForm.controls.state.touched)">
+        <div *ngIf="angForm.controls.state.errors.required" class="input-error-msg">State is required</div>
+      </div>
+
+      <label for="city" class="mgt-small">City</label>
+      <input type="text" formControlName="city">
+
+      <label for="address" class="mgt-small">Address</label>
+      <input type="text" formControlName="address">
+
+      <label for="phone" class="mgt-small">Phone</label>
+      <input type="text" formControlName="phone">
+
+      <label for="email" class="mgt-small">E-mail</label>
+      <input type="text" formControlName="email">
+    </div>
+    
+  </div>
+  <div class="grid-2">
+    <div class="col">
+      <a class="btn btn-secondary" (click)="deleted.emit('')">Delete</a>
+    </div>
+    <div class="col text-right">
+      <a class="btn btn-secondary" (click)="canceled.emit('')">Cancel</a>
+      <button class="btn btn-primary" [disabled]="!angForm.valid">Save</button>
+    </div>
+  </div>
+</form>

@@ -1,23 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-// COLOR VARIABLES
-$color-primary: #c69963;
-$color-primary-dark: #b28451;
+@import "variables";
+@import "../node_modules/ng2-slim-loading-bar/style.css";
 
-$color-secondary: #101d2c;
-
-// FONT VARIABLES
-$font-primary: "Roboto", sans-serif;
-$font-display: "Rubik", sans-serif;
-
-// RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; // 1200px
-$bp-large: 62.5em; // 1000px
-$bp-medium: 50em; // 800px;
-$bp-small: 37.5em; // 600px;
-
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import url("https://fonts.googleapis.com/css?family=Roboto:400, 700");
 @import url("https://fonts.googleapis.com/css?family=Rubik:300, 400, 500, 700");
-// @import url("https://weloveiconfonts.com/api/?family=fontawesome");
 
 *,
 *::before,
@@ -55,15 +42,25 @@ h5{
 
 .btn {
   font-weight: bolder;
-  padding: .7rem 1.5rem;
+  padding: .6rem 1.4rem;
   border: 1px solid #ddd;
   font-size: 1.2rem;
   border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-primary {
-  background-color: #50a1fc;
+  background-color: $color-primary;
   color: #fff;
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+  color: #fff;
+}
+.btn-primary[disabled]{
+  background-color: lighten($color-primary,30);
 }
 
 .btn-block {
@@ -73,11 +70,12 @@ h5{
 .fbox-align-center {
   align-self: center;
 }
-
+.text-right{
+  text-align: right
+}
 .text-center {
   text-align: center;
 }
-
 .text-muted {
   color:#aaa;
 }
@@ -86,6 +84,9 @@ h5{
 }
 .text-white{
   color: white;
+}
+.text-red{
+  color: $color-primary;
 }
 .text-xs{
   font-size: 10px;
@@ -139,11 +140,11 @@ h5{
 }
 
 .invalid-feedback{
-  color: #ec4029
+  color: $color-primary-light;
 }
 
 .is-invalid {
-  border: 1px solid #ec4029
+  border: 1px solid $color-primary-light
 }
 
 .wrap {
@@ -191,4 +192,122 @@ h5{
 .icon-small > svg {
   height: 20px;
   width: 20px;
+}
+
+
+// SIMPLE GRID //
+.grid {
+  display: flex;
+  margin: 0 0 20px 0;
+}
+.grid .col {
+  flex: 1;
+}
+.grid-4, .grid-3, .grid-2 {
+  display: flex;
+  justify-content: space-between;
+}
+.grid-2 .col {
+  width: 49%;
+}
+.grid-3 .col {
+  width: 32%;
+}
+.grid-4 .col {
+  width: 24%;
+}
+@media (max-width: 900px) {
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+/** FORM STYLES **/
+.form {
+  label {
+    display: block;
+    font-weight: bold;
+    color: #777;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: inherit;
+  }
+  button,a {
+    margin: 0px 5px;
+  }
+  .date-input{
+    width: inherit;
+  }
+}
+input.ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid,
+select.ng-dirty.ng-invalid {
+  border: 2px solid rgba(255, 0, 0, 0.31);
+  outline: none;
+}
+
+.input-error-msg {
+  color: $color-primary;
+}
+
+.mat-simple-snackbar-action{ 
+  color:#fff
+}
+.success-msg {
+  background-color: #7cdd5f;
+  color: #000;
+}
+.error-msg {
+  background-color: #ff6464;
+  color: #000;
+
+}
+
+
+/* TABLE STYLES */
+.table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+}
+
+.table > tbody {
+  font-size: 15px;
+}
+
+.table > thead > tr > th {
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+  border-bottom: 2px solid rgba(100, 100, 100, 0.2);
+  padding: 5px 0px;
+}
+
+.table > tbody > tr > td {
+  padding: 10px 2px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+
+.table-hover-striped tbody tr:hover {
+  background-color: rgba(150,150,150,.1);
+  cursor: pointer;
 }

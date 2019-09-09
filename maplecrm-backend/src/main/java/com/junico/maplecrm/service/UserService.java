@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.junico.maplecrm.model.users.Role;
@@ -13,6 +15,7 @@ import com.junico.maplecrm.model.users.UserRole;
 import com.junico.maplecrm.repository.RoleRepository;
 import com.junico.maplecrm.repository.UserRepository;
 import com.junico.maplecrm.repository.UserRoleRepository;
+import com.junico.maplecrm.security.UserPrincipal;
 
 @Service
 public class UserService {
@@ -58,6 +61,12 @@ public class UserService {
 
 		userRoleRepository.delete(exists);
 		return;
+	}
+
+	public User getCurrentUser() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+		return userPrincipal.getRef();
 	}
 
 }

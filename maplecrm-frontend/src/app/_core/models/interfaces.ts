@@ -1,3 +1,4 @@
+
 export interface Account {
   monthlySalesGoal,
   quarterlySalesGoal,
@@ -7,10 +8,4 @@ export interface Account {
   quarterlySalesCurrent,
   monthlyCustomersCurrent,
   quarterlyCustomersCurrent: number;
-}
-
-export interface Customer {
-  name:string, 
-  birthdate:Date
-
 }

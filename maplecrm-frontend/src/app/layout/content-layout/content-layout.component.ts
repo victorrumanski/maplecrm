@@ -11,17 +11,20 @@ export class ContentLayoutComponent implements OnInit {
 
   public user: User;
 
-  constructor(private authenticationService: AuthService, private router: Router) {
+  constructor(
+    private authenticationService: AuthService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
     this.user = this.authenticationService.currentUserValue;
     this.authenticationService.currentUser$
       .subscribe(user => {
         if (!user) {
-          router.navigate(['/auth/login'])
+          this.router.navigate(['/auth/login'])
         }
       })
   }
-
-  ngOnInit() { }
 
   doLogout() {
     this.authenticationService.logout();

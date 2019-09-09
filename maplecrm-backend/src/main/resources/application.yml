@@ -19,7 +19,8 @@ spring:
                 temp:
                   use_jdbc_metadata_defaults: false
         database-platform: org.hibernate.dialect.PostgreSQL9Dialect
-    
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
     security:
       oauth2:
         client:

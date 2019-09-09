@@ -2,13 +2,16 @@ package com.junico.maplecrm.model.sales;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.junico.maplecrm.model.users.User;
 
 @Entity
@@ -18,6 +21,7 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
+	@Column(name = "createdat")
 	private Date createdAt;
 
 	@ManyToOne
@@ -30,7 +34,11 @@ public class Customer {
 
 	private String address, city, state;
 
+	@JsonFormat(pattern = "MM-dd-yyyy hh:mm:ss Z")
 	private Date birthdate;
+
+	@Transient
+	private Object total, ordercount;
 
 	public Long getId() {
 		return id;
@@ -126,6 +134,22 @@ public class Customer {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Object getTotal() {
+		return total;
+	}
+
+	public void setTotal(Object total) {
+		this.total = total;
+	}
+
+	public Object getOrdercount() {
+		return ordercount;
+	}
+
+	public void setOrdercount(Object ordercount) {
+		this.ordercount = ordercount;
 	}
 
 }

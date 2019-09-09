@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { FeatherModule } from 'angular-feather';
-import { Airplay, BarChart, Bell, Heart, LogOut, MessageSquare, Search, Settings, Terminal, User, UserPlus, Users } from 'angular-feather/icons';
+import { Monitor, BarChart, Bell, Heart, LogOut, MessageSquare, Search, Settings, Terminal, User, UserPlus, Users, ShoppingCart, Tag,Shield } from 'angular-feather/icons';
 
 const icons = {
-  Users, User,
+  Users, 
+  User,
   UserPlus,
   Search,
-  Airplay,
+  Monitor,
   Terminal,
   Bell,
   MessageSquare,
   Heart,
-  BarChart, Settings, LogOut
+  BarChart, 
+  Settings, 
+  LogOut,
+  Tag,
+  ShoppingCart,
+  Shield
 };
 
 @NgModule({

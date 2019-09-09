@@ -1,1 +1,33 @@
-<h2>Aqui vai a lista de clientes</h2>
+<div class="panel white mgt-med mgb-med">
+  <div class="grid-2">
+    <div class="form col">
+      <input type="text" placeholder="Filter..." 
+      (keyup)="filtered.emit($event.target.value)">
+    </div>
+    <div class="col text-right">
+      <a routerLink="new" class="btn btn-primary">New Customer</a>
+    </div>
+  </div>
+  <table class="table table-hover-striped mgt-small">
+    <thead>
+      <tr>
+        <th style="width: 10%" class="align-center">#</th>
+        <th style="width: 40%">Name</th>
+        <th style="width: 15%">City</th>
+        <th style="width: 15%">Since</th>
+        <th style="width: 15%" class="align-right">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers; let i = index"> 
+        <td class="align-center">{{customer.id}}</td>
+        <td>
+            <a routerLink="{{customer.id}}">{{customer.name}}</a>
+        </td>
+        <td>{{customer.city}}</td>
+        <td>{{customer.createdAt | date}}</td>
+        <td class="align-right">{{customer.total | currency:'$':'symbol':'3.0-0'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

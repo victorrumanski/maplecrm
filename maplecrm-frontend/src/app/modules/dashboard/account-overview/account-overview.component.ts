@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
-import { ChartType, ChartOptions } from 'chart.js';
-import { MultiDataSet, Label, Color } from 'ng2-charts';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Account } from '@app/_core';
+import { ChartOptions, ChartType } from 'chart.js';
+import { Label, MultiDataSet } from 'ng2-charts';
 @Component({
   selector: 'app-account-overview',
   templateUrl: './account-overview.component.html',

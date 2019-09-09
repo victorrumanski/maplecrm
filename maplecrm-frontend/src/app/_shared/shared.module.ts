@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent, MenuComponent, NotFoundComponent } from './components';
 import { ForbiddenComponent } from './components/forbidden/forbidde.component';
 import { IconsModule } from './icons.module';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import { IconsModule } from './icons.module';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    IconsModule
+    IconsModule,
+    MaterialModule
   ],
   declarations: [
     MenuComponent,
@@ -29,6 +32,7 @@ import { IconsModule } from './icons.module';
     HttpClientModule,
     RouterModule,
     IconsModule,
+    MaterialModule,
     MenuComponent,
     HeaderComponent,
     NotFoundComponent,

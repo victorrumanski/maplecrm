@@ -1,3 +1,5 @@
+@import "../../../variables";
+
 .auth {
   display: flex;
   flex-direction: column;
@@ -20,7 +22,7 @@
 }
 
 .welcome {
-  background-color: #50a1fc;
+  background-color: $color-primary-dark;
   color: #fff;
   display: flex;
   flex-direction: column;

@@ -9,6 +9,8 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { CoreModule } from './_core';
 import { SharedModule } from './_shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SharedModule } from './_shared/shared.module';
     ChartsModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SlimLoadingBarModule
   ],
   providers: [
 

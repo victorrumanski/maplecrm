@@ -10,7 +10,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.junico.maplecrm.exception.BadRequestException;
-import com.junico.maplecrm.exception.ResourceNotFoundException;
 import com.junico.maplecrm.model.users.AuthProvider;
 import com.junico.maplecrm.model.users.Role;
 import com.junico.maplecrm.model.users.User;
@@ -96,10 +94,8 @@ public class AuthController {
 
 	@GetMapping("/current")
 	@PreAuthorize("hasRole('" + Role.DEFAULT + "')")
-	public User getCurrentUser(@AuthenticationPrincipal Authentication authentication) {
-		UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-		return userRepository.findById(userPrincipal.getId())
-				.orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
+	public User getCurrentUser() {
+		return userService.getCurrentUser();
 	}
 
 }
