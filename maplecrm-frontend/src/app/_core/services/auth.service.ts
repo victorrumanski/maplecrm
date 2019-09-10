@@ -63,9 +63,11 @@ export class AuthService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<User>(`${this.rootPath}/current`, { headers })
       .pipe(tap(user => {
-        user.token = token;
-        localStorage.setItem(this.ITEM_KEY, JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        const newUser = {
+          ...user, token
+        }
+        localStorage.setItem(this.ITEM_KEY, JSON.stringify(newUser));
+        this.currentUserSubject.next(newUser);
       }));
   }
   logout() {

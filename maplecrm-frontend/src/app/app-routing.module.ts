@@ -6,7 +6,6 @@ import { AuthGuard } from './_core';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { ForbiddenComponent } from './_shared/components/forbidden/forbidde.component';
 
-//'./dashboard/dashboard.module#DashboardModule'
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +26,14 @@ const routes: Routes = [
         path: 'customers',
         loadChildren: () =>
           import('./modules/customers/customers.module').then(m => m.CustomersModule)
+      },
+      {
+        path: 'users',
+        data: {
+          roles: ['ADMIN']
+        },
+        loadChildren: () =>
+          import('./modules/users/users.module').then(m => m.UsersModule)
       }
     ]
   },
