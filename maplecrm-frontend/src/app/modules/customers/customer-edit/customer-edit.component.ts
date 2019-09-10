@@ -55,7 +55,7 @@ export class CustomerEditComponent implements OnInit {
       email: [this.customer.email],
       city: [this.customer.city],
       address: [this.customer.address],
-      birthdate: [new Date(this.customer.birthdate)]
+      birthdate: [!this.customer.id ? null : new Date(this.customer.birthdate)]
     })
   }
 
@@ -63,6 +63,10 @@ export class CustomerEditComponent implements OnInit {
     if (this.angForm.invalid)
       return;
     this.submitted.next(this.angForm.value);
+  }
+
+  log(){
+    console.log(this.angForm)
   }
 
 }

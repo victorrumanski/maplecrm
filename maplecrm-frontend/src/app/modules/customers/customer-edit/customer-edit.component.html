@@ -23,8 +23,8 @@
       <mat-datepicker #picker></mat-datepicker>
 
       <!--  <pre>Form value: {{angForm.value | json}}</pre>
-      <pre>Form status: {{angForm.status | json}}</pre>-->
-      <!-- <pre>Customer: {{customer | json }}</pre>  -->
+      <pre>Form status: {{angForm.status | json}}</pre> 
+      <pre>Customer: {{customer | json }}</pre>  -->
     </div>
 
     <div class="panel white col">
@@ -56,7 +56,8 @@
   </div>
   <div class="grid-2">
     <div class="col">
-      <a class="btn btn-secondary" (click)="deleted.emit('')">Delete</a>
+      <a *ngIf="customer.id" class="btn btn-secondary" 
+      (click)="deleted.emit('')">Delete</a>
     </div>
     <div class="col text-right">
       <a class="btn btn-secondary" (click)="canceled.emit('')">Cancel</a>

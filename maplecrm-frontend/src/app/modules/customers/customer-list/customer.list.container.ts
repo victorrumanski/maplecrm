@@ -25,7 +25,7 @@ export class CustomerListContainer implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription.add(
       this.filter$.pipe(
-        debounceTime(300),
+        //debounceTime(300),
         distinctUntilChanged(),
         switchMap(text => this.customerService.findAll(text))
       ).subscribe(
