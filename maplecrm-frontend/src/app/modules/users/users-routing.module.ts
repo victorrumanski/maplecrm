@@ -11,11 +11,6 @@ const routes: Routes = [
     data: { title: 'User List' }
   },
   {
-    path: 'new',
-    component: UserEditContainer,
-    data: { title: 'New User' }
-  },
-  {
     path: ':id',
     component: UserEditContainer,
     resolve: {

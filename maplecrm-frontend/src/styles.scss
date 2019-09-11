@@ -309,5 +309,11 @@ select.ng-dirty.ng-invalid {
 
 .table-hover-striped tbody tr:hover {
   background-color: rgba(150,150,150,.1);
-  cursor: pointer;
+}
+
+
+
+.table input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
 }

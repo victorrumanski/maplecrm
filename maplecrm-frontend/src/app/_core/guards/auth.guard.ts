@@ -18,7 +18,6 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
       return false;
     }
-
     if (route.data.role && !currentUser.roles.includes(route.data.role)) {
       //route needs specific role and the user does not have it
       this.router.navigate(['/forbidden']);

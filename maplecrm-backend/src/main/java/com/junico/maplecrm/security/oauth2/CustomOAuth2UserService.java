@@ -15,7 +15,7 @@ import org.springframework.util.StringUtils;
 import com.junico.maplecrm.exception.OAuth2AuthenticationProcessingException;
 import com.junico.maplecrm.model.users.AuthProvider;
 import com.junico.maplecrm.model.users.User;
-import com.junico.maplecrm.repository.UserRepository;
+import com.junico.maplecrm.repository.user.UserRepository;
 import com.junico.maplecrm.security.UserPrincipal;
 import com.junico.maplecrm.security.oauth2.user.OAuth2UserInfo;
 import com.junico.maplecrm.security.oauth2.user.OAuth2UserInfoFactory;

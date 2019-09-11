@@ -27,7 +27,7 @@ import com.junico.maplecrm.payload.ApiResponse;
 import com.junico.maplecrm.payload.AuthResponse;
 import com.junico.maplecrm.payload.LoginRequest;
 import com.junico.maplecrm.payload.SignUpRequest;
-import com.junico.maplecrm.repository.UserRepository;
+import com.junico.maplecrm.repository.user.UserRepository;
 import com.junico.maplecrm.security.TokenProvider;
 import com.junico.maplecrm.security.UserPrincipal;
 import com.junico.maplecrm.service.UserService;

@@ -9,3 +9,8 @@ export interface Account {
   monthlyCustomersCurrent,
   quarterlyCustomersCurrent: number;
 }
+
+export interface ApiResponse {
+  message: string;
+  success: boolean;
+}

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.junico.maplecrm.exception.ResourceNotFoundException;
 import com.junico.maplecrm.model.users.User;
-import com.junico.maplecrm.repository.UserRepository;
+import com.junico.maplecrm.repository.user.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

@@ -57,7 +57,7 @@
   <div class="grid-2">
     <div class="col">
       <a *ngIf="customer.id" class="btn btn-secondary" 
-      (click)="deleted.emit('')">Delete</a>
+      (click)="confirmDelete()">Delete</a>
     </div>
     <div class="col text-right">
       <a class="btn btn-secondary" (click)="canceled.emit('')">Cancel</a>

@@ -65,8 +65,10 @@ export class CustomerEditComponent implements OnInit {
     this.submitted.next(this.angForm.value);
   }
 
-  log(){
-    console.log(this.angForm)
+  confirmDelete(){
+    if(confirm("Are you sure to delete?")) {
+      this.deleted.emit('');
+    }
   }
 
 }

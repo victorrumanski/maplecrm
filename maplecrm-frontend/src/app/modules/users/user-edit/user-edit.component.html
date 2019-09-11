@@ -1,1 +1,45 @@
-user edit here
+<div class="grid-2">
+  <div class="panel white col">
+    <h4>User Info</h4>
+    <form class="form mgt-small" [formGroup]="angForm" (ngSubmit)="onSubmit()" novalidate>
+      <label for="name">Name<span class="text-red">*</span></label>
+      <input type="text" id="name" formControlName="name">
+      <div *ngIf="angForm.controls.name.invalid && (angForm.controls.name.dirty || angForm.controls.name.touched)">
+        <div *ngIf="angForm.controls.name.errors.required" class="input-error-msg">
+          Name is required
+        </div>
+      </div>  
+
+      <label for="email" class="mgt-small">Email</label>
+      <span>{{user.email}}</span>
+
+      <div  class="mgt-med">
+        <img src="{{user.imageUrl  || '/assets/images/nouser.png'}}" style="height: 200px">
+        <textarea rows="3" formControlName="imageUrl">{{this.user.imageUrl}}</textarea>
+      </div>
+      <div class="text-right mgt-small">
+          <a class="btn btn-secondary" (click)="canceled.emit($event)">Cancel</a>
+          <button class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="panel white col">
+    <h4>Roles</h4>
+
+    <table class="table mgt-small">
+      <tbody>
+        <tr *ngFor="let role of roles">
+          <td class="align-center">
+            <input type="checkbox" 
+              [(ngModel)]="role.granted" 
+              (change)="addRemoveRole.emit(role)"
+            >
+          </td>
+          <td>{{role.name}}</td>
+          <td>{{role.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

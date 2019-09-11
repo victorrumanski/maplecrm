@@ -132,9 +132,13 @@ public class User {
 		this.userRoles = userRoles;
 	}
 
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+
 	public List<String> getRoles() {
 		if (userRoles == null)
-			return Collections.emptyList();
+			return roles != null ? roles : Collections.emptyList();
 
 		return userRoles.stream().map(ur -> {
 			return ur.getRole().getName();

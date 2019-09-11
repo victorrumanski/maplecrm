@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.junico.maplecrm.exception.ResourceNotFoundException;
 import com.junico.maplecrm.model.sales.Customer;
 import com.junico.maplecrm.model.users.User;
+import com.junico.maplecrm.payload.ApiResponse;
 import com.junico.maplecrm.repository.customer.CustomerRepository;
 import com.junico.maplecrm.service.CustomerService;
 import com.junico.maplecrm.service.UserService;
 
 @RestController
-@RequestMapping(path = "customers", produces = "application/json")
+@RequestMapping(path = "customers")
 public class CustomerController {
 
 	@Autowired
@@ -59,15 +59,13 @@ public class CustomerController {
 	@PutMapping("/{id}")
 	public Customer update(@PathVariable(value = "id") Long customerId, @Valid @RequestBody Customer customer) {
 		customer.setId(customerId);
-		customer.setCreatedBy(userService.getCurrentUser());
-		customer.setCreatedAt(new Date());
 		return customerRepo.save(customer);
 	}
 
 	@DeleteMapping("/{id}")
-	@ResponseBody
-	public void delete(@PathVariable(value = "id") Long id) {
+	public ApiResponse delete(@PathVariable(value = "id") Long id) {
 		customerService.delete(id);
+		return new ApiResponse(true, "Customer " + id + " deleted");
 	}
 
 }

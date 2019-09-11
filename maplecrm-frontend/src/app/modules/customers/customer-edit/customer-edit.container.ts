@@ -18,8 +18,8 @@ export class CustomerEditContainer implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private customerService: CustomerService,
     private router: Router,
+    private customerService: CustomerService,
     private notificationService: NotificationService
   ) { }
 
@@ -48,7 +48,6 @@ export class CustomerEditContainer implements OnInit {
   }
 
   submitted(event) {
-    console.log('submited', event);
     const d = new Date(event.birthdate);
     const date = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
     event.birthdate = date;
