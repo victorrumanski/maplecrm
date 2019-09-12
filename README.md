@@ -54,7 +54,7 @@ To have an overview of the authentication flow , see these diagrams
  - Update
  - Delete
  - Search
- - 
+ 
 #### Users
  - Update user's name and image
  - Add and Remove roles for authorization
