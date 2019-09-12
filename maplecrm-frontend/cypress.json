@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "loginUrl": "/auth/login",
+  "email": "admin@maplecrm.com",
+  "password": "saq123",
+  "wrong-password": "wrong"
+}

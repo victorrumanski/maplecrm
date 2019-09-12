@@ -5,7 +5,7 @@
     <label for="email" class="login__label">Email Address</label>
     <div class="input-group" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
       <span class="input-group__icon material-icons">email</span>
-      <input type="text" formControlName="email" class="input-group__input" />
+      <input id="email" type="text" formControlName="email" class="input-group__input" />
     </div>
     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
         <div *ngIf="f.email.errors.required">E-mail is required</div>
@@ -24,8 +24,8 @@
 
     <div class="mgt-small"></div>
 
-    <button class="btn btn-primary btn-block" [disabled]="loading">Log In</button>
-    <div *ngIf="error" class="alert alert-error">{{error}}</div>
+    <button id="login-btn" class="btn btn-primary btn-block" [disabled]="loading">Log In</button>
+    <div id="error-msg" *ngIf="error" class="alert alert-error">{{error}}</div>
   </form>
   
   <div class="fbox-align-center orloginwith mgb-small">Or login with</div>
@@ -41,7 +41,7 @@
     </a>
   </div>
   
-  <a routerLink="/auth/register" class="fbox-align-center bold">Don't have an account? Register Here</a>
+  <a id="register-link" routerLink="/auth/register" class="fbox-align-center bold">Don't have an account? Register Here</a>
   
-  <a routerLink="/auth/forgot" class="fbox-align-center bold">Recover Password</a>
+  <a id="recover-link" routerLink="/auth/forgot" class="fbox-align-center bold">Recover Password</a>
 </div>

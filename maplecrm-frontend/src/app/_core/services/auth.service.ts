@@ -32,10 +32,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<{
-      token: string;
-      user: User;
-    }>(`${this.rootPath}/login`, { email, password })
+    return this.http.post<{ token: string, user: User }>(`${this.rootPath}/login`, { email, password })
       .pipe(map(auth => {
         // login successful if there's a jwt token in the response
         if (auth.token && auth.user) {
