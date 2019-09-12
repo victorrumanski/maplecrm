@@ -5,25 +5,29 @@ describe("Login", () => {
   function password() {
     return cy.get("#password");
   }
-  function loginBtn() {
-    return cy.get("#login-btn");
+  function name() {
+    return cy.get("#name");
+  }
+  function registerBtn() {
+    return cy.get("#register-btn");
   }
 
   beforeEach(() => {
-    cy.visit(Cypress.config("loginUrl"));
+    cy.visit(Cypress.config("register").url);
     email().clear();
     password().clear();
+    name().clear();
   });
 
-  it("greets with sign in", () => {
-    cy.get("#sign-title").contains("Sign into");
+  it("Greets with Register", () => {
+    cy.get("#register-title").contains("Register");
   });
 
-  it("links to register", () => {
-    cy.get("#register-link").click();
-    cy.url().should("include", "register");
+  it("Links to login", () => {
+    cy.get("#login-link").click();
+    cy.url().should("include", "login");
   });
-
+/*
   it("requires email", () => {
     password().type(Cypress.config("wrong-password"));
     loginBtn().click();
@@ -43,10 +47,13 @@ describe("Login", () => {
     cy.get("#error-msg").contains("Bad credentials");
   });
 
-  it("navigates to dashboard on successful login", () => {
-    email().type(Cypress.config("email"));
-    password().type(Cypress.config("password"));
-    loginBtn().click();
-    cy.url().should("include", "dashboard");
+  it("register user navigates to dashboard", () => {
+    
+    cy.get('#name').type("Adam");
+    cy.get("#email").type("smith@gmail.com");
+    cy.get("#password").type("abc123");
+    cy.get("#register-btn").click();
+    cy.url().should('include', 'dashboard');
   });
+*/
 });

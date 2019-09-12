@@ -1,7 +1,7 @@
 Cypress.Commands.add("login", () => {
   cy.request({
     method: "POST",
-    url: "loginUrl",
+    url: Cypress.config("loginUrl"),
     body: {
       email: Cypress.config("email"),
       password: Cypress.config("password")

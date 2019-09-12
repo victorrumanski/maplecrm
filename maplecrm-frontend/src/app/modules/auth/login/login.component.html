@@ -1,4 +1,4 @@
-<h3 class="text-center mgb-med">Sign into Your Account</h3>
+<h3 class="text-center mgb-med" id="sign-title">Sign into Your Account</h3>
 <div class="login">
   <form class="login__form mgb-med" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     
@@ -8,7 +8,7 @@
       <input id="email" type="text" formControlName="email" class="input-group__input" />
     </div>
     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-        <div *ngIf="f.email.errors.required">E-mail is required</div>
+        <div id="email-error" *ngIf="f.email.errors.required">E-mail is required</div>
     </div>
 
     <div class="mgt-small"></div>
@@ -19,7 +19,7 @@
       <input type="password" class="input-group__input" id="password" formControlName="password" />
     </div>
     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-      <div *ngIf="f.password.errors.required">Password is required</div>
+      <div id="password-error" *ngIf="f.password.errors.required">Password is required</div>
     </div>
 
     <div class="mgt-small"></div>
