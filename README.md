@@ -63,11 +63,11 @@ To have an overview of the authentication flow , see these diagrams
  - Delete
  - Search
  
-#### Users
+### Users
  - Update user's name and image
  - Add and Remove roles for authorization
 
-#### Orders and Order Items
+### Orders and Order Items
  - Create Order
  - Add Item
  - Remove Item
