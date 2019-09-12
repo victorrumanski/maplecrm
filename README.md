@@ -15,10 +15,10 @@ Angular 8 spa that uses the following practices:
 
 #### Backend
 Spring Boot 2 API with :
-	- Spring Security with JWT tokens, OAuth2 social login and html login form
-	- Controller > Service > Repository structure
-	- JPA and Postgres
-	- Users with Roles for authorization
+ - Spring Security with JWT tokens, OAuth2 social login and html login form
+ - Controller > Service > Repository structure
+ - JPA and Postgres
+ - Users with Roles for authorization
 
 #### Testing
 All modules are tested with Cypress e2e tests.
