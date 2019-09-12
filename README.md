@@ -26,6 +26,7 @@ All modules are tested with Cypress e2e tests.
 #### Swagger 
 for API docs
 
+#### OAuth
 This project uses oauth2 for social login
 To have an overview of the authentication flow , see these diagrams
 ![enter image description here](https://i.stack.imgur.com/PBlvj.png)
