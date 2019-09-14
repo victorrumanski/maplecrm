@@ -4,7 +4,7 @@
 # Welcome to   MapleCRM 
 
 <img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" /><img src="https://i.ibb.co/Ycc9Wkx/logo.png"  height="30" />
-</center>
+
 
 
 
@@ -73,3 +73,8 @@ To have an overview of the authentication flow , see these diagrams
  - Remove Item
  - Calculate Order
  - Send Notification of order shipped
+
+
+## Screen Shots
+<img src="https://i.ibb.co/ysZFNGS/login.png"/>
+<img src="https://i.ibb.co/QvN9N70/dashboard.png"/>
