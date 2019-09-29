@@ -11,6 +11,11 @@
 ### Angular 8 SPA with Spring Boot Backend and Postgres Database
 The domain models a simple CRM with Users, Customers, Products, Orders and Order Items.
 
+
+## Screen Shots
+<img src="https://i.ibb.co/ysZFNGS/login.png"/>
+<img src="https://i.ibb.co/QvN9N70/dashboard.png"/>
+
 #### Frontend
 Angular 8 spa that uses the following practices:
 - The core/shared/features folder structure
@@ -75,6 +80,3 @@ To have an overview of the authentication flow , see these diagrams
  - Send Notification of order shipped
 
 
-## Screen Shots
-<img src="https://i.ibb.co/ysZFNGS/login.png"/>
-<img src="https://i.ibb.co/QvN9N70/dashboard.png"/>
