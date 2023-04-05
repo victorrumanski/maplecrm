@@ -7,7 +7,7 @@
 
 
 
-### Angular 8 SPA with Spring Boot Backend and Postgres Database
+### Fullstack project using Angular 2+, Spring Boot in the Backend and Postgresql as Database.
 The domain models a simple CRM with Users, Customers, Products, Orders and Order Items.
 
 
